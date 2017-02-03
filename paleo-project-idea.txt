@@ -18,3 +18,6 @@ Specific Species in Each Category:
 1. Sirenia - 167 unique species
 2. Felidae - 303 unique species
 3. Elasmobranchii - 381 unique species
+
+Shell command: cut -d "," -f 6-7 pbdb_data\(Sirenia\).csv | sort -n | uniq | grep "species" | wc -l
+(Replace Sirenia with Elasmobranchii/Felidae for each respective result)

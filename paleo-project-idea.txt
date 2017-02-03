@@ -13,3 +13,8 @@ Rank:
 1. Elasmobranchii (Sharks and Rays)
 2. Sirenia (Manatees and Dugongs)
 3. Felidae (Big Cats)
+
+Specific Species in Each Category:
+1. Sirenia - 167 unique species
+2. Felidae - 303 unique species
+3. Elasmobranchii - 381 unique species

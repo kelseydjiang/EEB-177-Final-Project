@@ -1,9 +1,9 @@
 # Pseudocode for Project:
 
-my_file = open("pbdb_data\(Elasmobranchii\).csv")
-xx = Get user input (In Geological Time Period)
-yy = Correlate xx to corresponding species
-Order geological time period
+my_file = open("pbdb_data\(Elasmobranchii\).csv")  
+xx = Get user input (In Geological Time Period)  
+yy = Correlate xx to corresponding species  
+Order geological time period  
 	Print how many times yy shows up in each input of geological time period
 
 Graph corresponding data and species along geological time era axis with computer program R. 

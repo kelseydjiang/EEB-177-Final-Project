@@ -10,3 +10,5 @@ formatted_file = accepted_name (all the unique species) + early_interval
 for every species in pbdb_data(\Elasmobranchii|).csv file
 	print unique species and corresponding time period
 	
+
+Run through python and use R.

@@ -1,8 +1,0 @@
-Data Manipulation Over a Loop:
-
-set species name
-ask user to try to find species name in a geological time period
-	if the species exists within the time period, continue to next period
-	print how many geological time periods it showed up in
-	if the species does not exist, stop the command
-	

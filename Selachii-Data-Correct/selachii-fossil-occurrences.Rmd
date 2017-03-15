@@ -1,0 +1,62 @@
+---
+title: "selachii-fossil-occurences"
+author: "Kelsey Jiang"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+
+setwd("~/Desktop/eeb-177/EEB-177-Final-Project/Selachii-Data")
+sharks <- read.csv("~/Desktop/eeb-177/EEB-177-Final-Project/Selachii-Data/selachii_ranges.csv", header = F, as.is = T)
+names(sharks) <- c("genus", "species", "minage", "maxage")
+head(sharks)
+
+```
+
+```{r}
+sharks_occ <- ggplot(sharks, aes( species, ymin = maxage, ymax = minage, colour = genus))
+sharks_occ <- sharks_occ + geom_linerange()
+sharks_occ <- sharks_occ + theme(legend.position = "none")
+sharks_occ <- sharks_occ + coord_flip()
+sharks_occ <- sharks_occ + theme(axis.text.y = element_text(size = 0.9))
+sharks_occ <- sharks_occ + theme(axis.ticks.y = element_blank())
+sharks_occ <- sharks_occ + scale_y_continuous(limits=c(0, 60), expand = c(0,0), breaks=c(0, 10, 20, 30, 40, 50, 60))
+sharks_occ <- sharks_occ + labs(title = "Selachii Fossil Occurrences", x = "Species", y = "Ma Ago") + theme(plot.title = element_text(hjust = 0.5, size = 22, face = "bold"), axis.title=element_text(size=20))
+sharks_occ
+
+ggsave(filename = "selachii-occ.pdf", plot = sharks_occ)
+
+```
+
+```{r}
+library(ggplot2)
+
+setwd("~/Desktop/eeb-177/EEB-177-Final-Project/Selachii-Data")
+sharks1 <- read.csv("~/Desktop/eeb-177/EEB-177-Final-Project/Selachii-Data/selachii_species_part_1.csv", header = F, as.is = T)
+names(sharks1) <- c("genus", "species", "minage", "maxage")
+head(sharks1)
+
+sharks1_occ <- ggplot(sharks1, aes( x = species, maxage, colour = genus))
+# everything
+sharks1_occ + geom_linerange(aes(ymin = minage, ymax = maxage + 0.5)) + theme(legend.position="none") +  coord_flip() +  theme(axis.text.y = element_text(size=1)) + scale_y_continuous(limits=c(0, 60), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40, 50, 60)) + labs(title = "Selachii Part 1 Fossil Occurrences", x = "Species", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=22, face = "bold"), axis.title =element_text(size=20)) 
+
+ggsave(filename = "selachii-occ-part-1.pdf", plot = sharks1_occ)
+```
+
+```{r}
+library(ggplot2)
+
+setwd("~/Desktop/eeb-177/EEB-177-Final-Project/Selachii-Data")
+sharks2 <- read.csv("~/Desktop/eeb-177/EEB-177-Final-Project/Selachii-Data/selachii_species_part_2.csv", header = F, as.is = T)
+names(sharks2) <- c("genus", "species", "minage", "maxage")
+head(sharks2)
+
+sharks2_occ <- ggplot(sharks2, aes( x = species, maxage, colour = genus))
+# everything
+sharks2_occ + geom_linerange(aes(ymin = minage, ymax = maxage + 0.5)) + theme(legend.position="none") +  coord_flip() +  theme(axis.text.y = element_text(size=1)) + scale_y_continuous(limits=c(0, 60), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40, 50, 60)) + labs(title = "Selachii Part 2 Fossil Occurrences", x = "Species", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=22, face = "bold"), axis.title =element_text(size=20)) 
+
+ggsave(filename = "selachii-occ-part-2.pdf", plot = sharks2_occ)
+
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
